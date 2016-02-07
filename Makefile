@@ -22,7 +22,10 @@ $(NAME)-$(VERSION).tar.gz: $(GEMS) $(TRUBY)
 	done
 	tar czf $(NAME)-$(VERSION).tar.gz $(NAME)-$(VERSION)
 
-rpm: $(NAME)-$(VERSION).tar.gz
+$(shell rpm --eval '%{_sourcedir}'):
+	mkdir -p $(shell rpm --eval '%{_sourcedir}')
+
+rpm: $(NAME)-$(VERSION).tar.gz $(shell rpm --eval '%{_sourcedir}')
 	cp -f $(NAME)-$(VERSION).tar.gz $(shell rpm --eval '%{_sourcedir}')/
 	rpmbuild -ba $(NAME).spec
 
