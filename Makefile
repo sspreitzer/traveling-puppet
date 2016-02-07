@@ -27,6 +27,7 @@ $(shell rpm --eval '%{_sourcedir}'):
 
 rpm: $(NAME)-$(VERSION).tar.gz $(shell rpm --eval '%{_sourcedir}')
 	cp -f $(NAME)-$(VERSION).tar.gz $(shell rpm --eval '%{_sourcedir}')/
+	chown $(shell id -u):$(shell id -g) $(NAME).spec
 	rpmbuild -ba $(NAME).spec
 
 clean:
