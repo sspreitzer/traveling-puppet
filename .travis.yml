@@ -5,4 +5,4 @@ services:
   - docker
 
 script:
-  - docker run -v $(pwd):/mnt --rm centos:latest /bin/bash -c 'yum install -y make wget rpmbuild; make -C /mnt'
+  - docker run -v $(pwd):/mnt --rm centos:latest /bin/bash -c 'yum install -y make wget rpmbuild; make -C /mnt rpm'
