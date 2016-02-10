@@ -1,0 +1,17 @@
+diff -ru traveling-puppet-3.8.4.orig/lib/ruby/gems/2.1.0/gems/puppet-3.8.4/lib/puppet/util/run_mode.rb traveling-puppet-3.8.4/lib/ruby/gems/2.1.0/gems/puppet-3.8.4/lib/puppet/util/run_mode.rb
+--- traveling-puppet-3.8.4.orig/lib/ruby/gems/2.1.0/gems/puppet-3.8.4/lib/puppet/util/run_mode.rb	2016-02-10 15:16:05.985859802 +0100
++++ traveling-puppet-3.8.4/lib/ruby/gems/2.1.0/gems/puppet-3.8.4/lib/puppet/util/run_mode.rb	2016-02-10 15:16:38.540039836 +0100
+@@ -55,11 +55,11 @@
+ 
+     class UnixRunMode < RunMode
+       def conf_dir
+-        which_dir("/etc/puppet", "~/.puppet")
++        which_dir("/etc/traveling-puppet", "~/.puppet")
+       end
+ 
+       def var_dir
+-        which_dir("/var/lib/puppet", "~/.puppet/var")
++        which_dir("/var/lib/traveling-puppet", "~/.puppet/var")
+       end
+     end
+ 

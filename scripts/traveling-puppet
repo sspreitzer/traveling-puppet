@@ -1,3 +1,3 @@
 #/bin/bash
 export PATH=/usr/share/traveling-puppet/bin:$PATH
-exec puppet $* --config /etc/traveling-puppet/puppet.conf
+exec puppet $*

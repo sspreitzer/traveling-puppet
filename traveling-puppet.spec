@@ -8,6 +8,11 @@ License:	ASL 2.0
 URL:		https://github.com
 Source:		%{name}-%{version}.tar.gz
 
+# There is a need to fix the paths
+# to make traveling puppet work
+# out of the box
+Patch0:		traveling-puppet.dirfix.patch
+
 AutoReq:	no
 AutoProv:	no
 
@@ -18,7 +23,7 @@ Traveling Puppet for 64bit Gnu/Linux
 Based on traveling-ruby
 
 %prep
-%autosetup
+%autosetup -p1
 
 %install
 %{__mkdir_p} %{buildroot}%{_usr}/share/%{name}
